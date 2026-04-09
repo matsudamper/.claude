@@ -1,7 +1,8 @@
 ---
 name: review-respond
 description: PRのunresolvedレビューコメントに対応する。修正コミット・反論・先送りTODOに分類し、gh-comment.ps1を生成する。
-argument-hint: <PR番号 または owner/repo#番号>
+argument-hint: <PR番号 or owner/repo#番号 or PR URL>
+disable-model-invocation: true
 ---
 
 ## 準備
@@ -17,7 +18,7 @@ gh api graphql -f query='
 {
   repository(owner: "OWNER", name: "REPO") {
     pullRequest(number: NUMBER) {
-      reviewThreads(first: 100) {
+      reviewThreads(first: 500) {
         nodes {
           isResolved
           comments(first: 10) {
