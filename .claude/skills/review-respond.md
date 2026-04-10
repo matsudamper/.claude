@@ -80,7 +80,7 @@ gh api graphql -f query='
 pwsh (PowerShell) で動くスクリプトとして `gh-comment.ps1` に書き出す。既存ファイルがある場合は末尾に「// ここから新規対応」と入れて追記する。
 
 ### スクリプトのフォーマット
-
+コミットハッシュの前後には半角スペースを入れる
 ```powershell
 # PR #番号 コメント返信スクリプト
 # 使い方: pwsh .\gh-comment.ps1
